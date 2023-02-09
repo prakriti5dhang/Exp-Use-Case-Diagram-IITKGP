@@ -1,3 +1,8 @@
+/*Redeveloped
+Lab: Software Engineering
+Exp:Modeling UML Use Case Diagrams and Capturing Use Case Scenarios
+File Name: ex2ucasedg.js.js
+Author: Prakriti Dhang*/
 
 /******************************Function of Table 1 of Exercise 2*************************************/
 
