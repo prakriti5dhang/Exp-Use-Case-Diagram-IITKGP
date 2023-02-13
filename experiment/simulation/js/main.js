@@ -260,7 +260,7 @@ select1.appendChild(newOption1);
   
 
 
-  var myTable = document.getElementById('tbl5');
+  /*var myTable = document.getElementById('tbl5');
   var totalRowCount = myTable.rows.length;
 if((totalRowCount)== 5){
  
@@ -268,7 +268,7 @@ if((totalRowCount)== 5){
 }
 else{
   document.getElementById("drawbtn").disabled=true;
-}
+}*/
 
   //alert(inpt3);
   var rbtn=document.createElement("button");
