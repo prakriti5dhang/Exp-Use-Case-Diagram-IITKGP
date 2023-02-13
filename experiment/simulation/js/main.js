@@ -319,7 +319,7 @@ if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "m
 
 if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "return")) ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc");
+  tr.setAttribute("id","t5uc1");
   document.getElementById('tbodytbl5').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -393,7 +393,7 @@ if(((dobj1 == "librarian")) && (dobjrel == "Association") && ((dobj2 == "issue")
 
 if(((dobj1 == "librarian")) && (dobjrel == "Association") && ((dobj2 == "return")) ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc2");
+  tr.setAttribute("id","t5uc3");
   document.getElementById('tbodytbl5').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -435,7 +435,7 @@ if(((dobj1 == "librarian")) && (dobjrel !== "Association") && ((dobj2 == "issue"
 
  if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel == "Include") && ((dobj2 == "verify")|| (dobj2 == "issue")) ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc3");
+  tr.setAttribute("id","t5uc4");
   document.getElementById('tbodytbl5').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");

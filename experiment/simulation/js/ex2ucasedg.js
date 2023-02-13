@@ -197,7 +197,7 @@ newIconbtn.setAttribute("class", "bi bi-dash-circle");
    /*  Customer --Association-- Make booking */
 if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
 var tr = document.createElement('tr');
-tr.setAttribute("id","t5uc");
+//tr.setAttribute("id","t5uc");
 document.getElementById('tbodytbl25').appendChild(tr);
 var td1 = document.createElement('td');
 var td2=document.createElement("td");
@@ -233,7 +233,7 @@ document.getElementById('tbodytbl25').appendChild(tr);
 /*  Book flight --Generalization-- Make booking */
 if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc");
+  //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -268,7 +268,7 @@ if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == 
 /*  Book hotel room --Generalization-- Make booking */
   if(( (dobj21 == "Book hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
     var tr = document.createElement('tr');
-    tr.setAttribute("id","t5uc");
+    //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
     var td1 = document.createElement('td');
     var td2=document.createElement("td");
@@ -311,7 +311,7 @@ if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == 
 /* Customer --Association-- Make payment */
 if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
 var tr = document.createElement('tr');
-tr.setAttribute("id","t5uc");
+//tr.setAttribute("id","t5uc");
 document.getElementById('tbodytbl25').appendChild(tr);
 var td1 = document.createElement('td');
 var td2=document.createElement("td");
@@ -346,7 +346,7 @@ document.getElementById('tbodytbl25').appendChild(tr);
 /*  Pay by card --Generalization-- Make payment */
 if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc");
+  //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -381,7 +381,7 @@ if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == 
   /*  Pay by cash --Generalization-- Make payment */
   if(((dobj21 == "Pay by cash")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
     var tr = document.createElement('tr');
-    tr.setAttribute("id","t5uc");
+    //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
     var td1 = document.createElement('td');
     var td2=document.createElement("td");
@@ -423,7 +423,7 @@ if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == 
       /* Customer --Association-- Cancel Booking */
 if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc");
+  //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -455,7 +455,7 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
   /*  Cancel flight --Generalization-- Cancel booking */
   if(((dobj21 == "Cancel flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
     var tr = document.createElement('tr');
-    tr.setAttribute("id","t5uc");
+    //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
     var td1 = document.createElement('td');
     var td2=document.createElement("td");
@@ -487,7 +487,7 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
     /*  Cancel hotel room --Generalization-- Cancel booking */
     if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
       var tr = document.createElement('tr');
-      tr.setAttribute("id","t5uc");
+      //tr.setAttribute("id","t5uc");
       document.getElementById('tbodytbl25').appendChild(tr);
       var td1 = document.createElement('td');
       var td2=document.createElement("td");
@@ -533,7 +533,7 @@ if(((dobj21 == "Travel agent")|| (dobj21 == "Travel Agent")) && (dobjrel2 !== "A
 /*  Travel Agent --Association-- Make booking */
 if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && (((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking"))) ){
 var tr = document.createElement('tr');
-tr.setAttribute("id","t5uc2");
+//tr.setAttribute("id","t5uc2");
 document.getElementById('tbodytbl25').appendChild(tr);
 var td1 = document.createElement('td');
 var td2=document.createElement("td");
@@ -570,7 +570,7 @@ document.getElementById('tbodytbl25').appendChild(tr);
 /*  Travel Agent --Association-- Make payment */
 if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment")) ){
 var tr = document.createElement('tr');
-tr.setAttribute("id","t5uc2");
+//tr.setAttribute("id","t5uc2");
 document.getElementById('tbodytbl25').appendChild(tr);
 var td1 = document.createElement('td');
 var td2=document.createElement("td");
@@ -608,7 +608,7 @@ document.getElementById('tbodytbl25').appendChild(tr);
 /*  Travel Agent --Association-- Cancel booking */
 if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
   var tr = document.createElement('tr');
-  tr.setAttribute("id","t5uc");
+  //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
   var td1 = document.createElement('td');
   var td2=document.createElement("td");
@@ -643,7 +643,7 @@ if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Ass
 /*  Refund --Extend-- Cancel booking */
 if(((dobj21 == "Cancel")) && (dobjrel2 == "Extend") && ((dobj22 == "Get refund")) ){
 var tr = document.createElement('tr');
-tr.setAttribute("id","t5uc3");
+//tr.setAttribute("id","t5uc3");
 document.getElementById('tbodytbl5').appendChild(tr);
 var td1 = document.createElement('td');
 var td2=document.createElement("td");
@@ -676,7 +676,7 @@ document.getElementById('tbodytbl25').appendChild(tr);
 
 if(((dobj21 == "Get refund")) && (dobjrel2 == "Extend") && ((dobj22 == "cancel")) ){
     var tr = document.createElement('tr');
-    tr.setAttribute("id","t5uc3");
+    //tr.setAttribute("id","t5uc3");
     document.getElementById('tbodytbl5').appendChild(tr);
     var td1 = document.createElement('td');
     var td2=document.createElement("td");
