@@ -151,8 +151,8 @@ Author: Prakriti Dhang
 
 <label for="table3" class="form-label fs-6" style=" font-weight: bold;">Table #3: Add relationship</label>
   <form id="ftbl3"  class=" bg-white " action="">
-    <!--div class="table-responsive"-->
-  <table id="tbl3" class="table table-bordered  border border-1 border-info table-stripped">
+    <div class="table-responsive">
+  <table id="tbl3" class="table column-bordered-table table-bordered  border border-1 border-info ">
     <thead>
       <th>From Actor / Use Case</th>
       <th>Relationship</th>
@@ -163,8 +163,7 @@ Author: Prakriti Dhang
     <tbody>
      <td>
       <select id="selectactuc1" class="form-select float-center border border-2 border-primary" aria-label="Default select example" >
-        
-        
+      
       </select>
      </td>
      <td>
@@ -182,13 +181,13 @@ Author: Prakriti Dhang
         
       </select>
      </td>
-     <td><input class=" border-primary " type="text" id="labelt3i" ></td>
+     <td><input class="form-control border-primary " type="text" id="labelt3i" ></td>
      <td style="text-align: center;"><button id="t3addbtn" class="btn btn-primary" type="button" onclick="addbtnt3()" ><i class="bi bi-plus-lg"></i>Add</button></td>
        
     </tbody>
 
   </table>
- <!-- </div> table 3 responsive div ended for exercise 1-->
+ </div> <!--table 3 responsive div ended for exercise 1-->
 </form>
 
 <!----------------------------------------------------------------------- Table 4 ------------------------------------------------------------->
@@ -226,7 +225,7 @@ Author: Prakriti Dhang
 <!---------------------------------------------------------------------- Table 5--------------------------------------------------------------->
 <label for="table5" class="form-label fs-6" style=" font-weight: bold;">Table #5: List of relationships</label>
 <form id="ftbl5"  class=" bg-white " action="">
-<!--div class="table-responsive"-->
+<div class="table-responsive">
 <table id="tbl5" class="table table-bordered  border border-1 border-info table-stripped">
   <thead>
     <th id="froma">From Actor / Use Case</th>
@@ -240,7 +239,7 @@ Author: Prakriti Dhang
 
   </tbody>
 </table>
-<!-- </div> table 5 responsive div ended for exercise 1-->
+</div> <!-- table 5 responsive div ended for exercise 1-->
 
 <button id="drawbtn" class="btn btn-primary" type="button" onclick="drawbtnex1()" ><i class="bi bi-paint-bucket"></i>Draw</button>
 </form>

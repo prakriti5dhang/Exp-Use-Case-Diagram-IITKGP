@@ -250,13 +250,13 @@ select1.appendChild(newOption1);
       alert("clicked addbtn t3");
        objsel1= document.getElementById("selectactuc1");
        dobj1 =objsel1.options[objsel1.selectedIndex].value;
-       //alert(dobj1);
+       alert(dobj1);
        objsel2= document.getElementById("selectactuc2");
        dobj2 =objsel2.options[objsel2.selectedIndex].value;
-        //alert(dobj2);
+        alert(dobj2);
         objselrel= document.getElementById("selectrel");
         dobjrel =objselrel.options[objselrel.selectedIndex].value;
-         //alert(dobjrel);
+         alert(dobjrel);
   inpt3=document.getElementById("labelt3i").value;
   
 
