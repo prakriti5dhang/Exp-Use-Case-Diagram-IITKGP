@@ -159,6 +159,7 @@ var ucaseex2=[];
  var arrrel2=[];
  var arrlbl2=[];
  function addbtnt23(){
+    alert("clicked addbtn t3");
    objsel21= document.getElementById("selectactuc21"); // select 
    dobj21 =objsel21.options[objsel21.selectedIndex].value; // select option actor and ucase
    //alert(dobj1);
