@@ -14,12 +14,8 @@ html {
     margin-bottom: 100px;
    
   }
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+
+
 
 .table-hover  tr:hover th, .table-hover  tr:hover td {
     background-color: #c8e4fffa;
