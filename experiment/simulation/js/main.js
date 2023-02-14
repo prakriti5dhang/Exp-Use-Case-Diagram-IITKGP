@@ -16,7 +16,7 @@ function subex(){
         document.getElementById("show_result").style.display="block";
         document.getElementById("show_result1").style.display="none";
         document.getElementById("show_result2").style.display="none";
-        document.getElementById('dispuml2').style.display="none";
+        document.getElementById("dispuml2").style.display="none";
         document.getElementById("dispviewbtn").disabled=false;
         document.getElementById("viewsol").disabled=true;
        
@@ -30,7 +30,7 @@ function subex(){
       document.getElementById("show_result").style.display="block";
       document.getElementById("show_result1").style.display="none";
       document.getElementById("show_result2").style.display="none";
-      document.getElementById('dispuml1').style.display="none";
+      document.getElementById("dispuml1").style.display="none";
       document.getElementById("dispviewbtn").disabled=false;
       document.getElementById("viewsol").disabled=true;
      
@@ -79,6 +79,7 @@ var  inpt1, arract=[];
 var actorex1=[];
 function addbtnt1(){
 let  newLi, newdiv;
+var letters = /^[A-Za-z]+$/;
 inpt1=document.getElementById("inp1").value;
 
 
@@ -103,8 +104,11 @@ newdiv.appendChild(newIconbtn);
   
   if (inpt1 == "") {
     alert("Please Enter Actor from the given problem statement before clicking Add Button");
-  } else {
-
+  } else if(!inpt1.match(letters))
+  { 
+    alert("Write name of actor again, you are allowed to use  alphabets, numerics and white-space only");
+  }
+  else{
   document.getElementById('actord').appendChild(newLi);
   document.getElementById("inp1").value="";
  actorex1.push(inpt1);
@@ -119,6 +123,7 @@ newOption.appendChild(optionText);
 // and option value
 
 newOption.setAttribute("id", newOptionID);
+newOption.setAttribute('class',"classActor");
 newOption.setAttribute('value',inpt1);
 let select1 = document.getElementById('selectactuc1'); 
 select1.appendChild(newOption);
@@ -134,6 +139,7 @@ newOption2.appendChild(optionText2);
 // and option value
 
 newOption2.setAttribute("id", newOptionID2);
+newOption2.setAttribute("class", "classActor");
 newOption2.setAttribute('value',inpt1);
 let select2 = document.getElementById('selectactuc2'); 
 select2.appendChild(newOption2);
@@ -189,6 +195,7 @@ let  inpt2, arruc=[];;
   newOptionID = 'newOption_' + inpt2;
     
   let newOption = document.createElement('option');
+  
   let optionText = document.createTextNode(inpt2);
   // set option text
   newOption.appendChild(optionText);
@@ -204,12 +211,14 @@ let  inpt2, arruc=[];;
   newOptionID1 = 'newOption_' + inpt2;
     
   let newOption1 = document.createElement('option');
+  newOption.setAttribute("class", "classUC");
   let optionText1 = document.createTextNode(inpt2);
   // set option text
   newOption1.appendChild(optionText1);
   // and option value
   
   newOption1.setAttribute("id", newOptionID1);
+  newOption1.setAttribute("class", "classUC");
   newOption1.setAttribute('value',inpt2);
   let select1 = document.getElementById('selectactuc1'); 
 select1.appendChild(newOption1);
@@ -217,30 +226,6 @@ select1.appendChild(newOption1);
   
   }
 
-
-
-
-
-
-
-
-
-    /*var category= document.getElementById("selectcat");
-   var checkedvalue= document.querySelector('input[type=checkbox][name=categoryselect]:checked').value
-    alert(checkedvalue);
-
-    /*********************************************** Category-People*************************************************/ 
-    /*if(((checkedvalue=="Mr Roy") || (checkedvalue=="boss")|| (checkedvalue=="son") || (checkedvalue=="Mr Bose") || (checkedvalue=="drives") || (checkedvalue=="passenger") || (checkedvalue=="persons") || (checkedvalue=="neighbour"))&& (category.options[category.selectedIndex].value==3) ){
-        let pnewLi = document.createElement("li");
-        let liTextNodep = document.createTextNode(checkedvalue);
-        pnewLi.appendChild(liTextNodep);
-        // this just makes sure a user cant enter in a blank value
-       
-        document.getElementById('peoplet3').appendChild(pnewLi);*/
-          
-      
-        
-        
     }
 
    
@@ -249,13 +234,17 @@ select1.appendChild(newOption1);
      var arrrel=[];
      var arrlbl=[];
      function addbtnt3(){
-     
+      
        objsel1= document.getElementById("selectactuc1");
        dobj1 =objsel1.options[objsel1.selectedIndex].value;
        alert(dobj1);
+       leftClass=objsel1.options[objsel1.selectedIndex].getAttribute("class");
+       alert(leftClass);
        objsel2= document.getElementById("selectactuc2");
        dobj2 =objsel2.options[objsel2.selectedIndex].value;
         alert(dobj2);
+        rightClass=objsel2.options[objsel2.selectedIndex].getAttribute("class");
+       alert(rightClass);
         objselrel= document.getElementById("selectrel");
         dobjrel =objselrel.options[objselrel.selectedIndex].value;
          alert(dobjrel);
@@ -284,7 +273,32 @@ else{
   newIconbtn.setAttribute("class", "bi bi-dash-circle");
        rbtn.appendChild(newIconbtn);   
 
-if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "issue") || (dobj2 == "issue book")) ){
+/*if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "issue") || (dobj2 == "issue book")) )*/
+if((dobj1 == dobj2)){
+  if (leftClass == 'classUC')
+                {
+                    alert('A use case can not be related with itself');
+                }else{
+                    alert('An actor can not be related with itself');
+                }
+              }
+
+              // Association is not allowed between two use cases 
+              else if ((leftClass == 'classUC') && (rightClass == 'classUC') && (dobjrel == 'Association'))
+                {
+                    alert('Association is not possible between two use cases');
+                }
+                // Only generalization is possible between two actors
+                else if ((leftClass == 'classActor') && (rightClass == 'classActor') && (dobjrel != 'Generalization'))
+                {
+                    alert('Only generalization is possible between two actors');
+                }
+              
+              else if ((leftClass != rightClass) && (dobjrel != 'Association'))
+              {
+                  alert(dobjrel + ' is not possible between ' + dobj1 + ' and ' + dobj2);
+              }
+              else{
   var tr = document.createElement('tr');
   tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl5').appendChild(tr);
@@ -316,10 +330,10 @@ if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "m
   tr.appendChild(td5);
   document.getElementById('tbodytbl5').appendChild(tr);
 
- 
-}
+              }      
 
-if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "return")) ){
+
+/*if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel == "Association") && ((dobj2 == "return")) ){
   var tr = document.createElement('tr');
   tr.setAttribute("id","t5uc1");
   document.getElementById('tbodytbl5').appendChild(tr);
@@ -351,13 +365,13 @@ if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "m
   tr.appendChild(td5);
   document.getElementById('tbodytbl5').appendChild(tr);
 
-}
+}*/
 
-if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel !== "Association") && ((dobj2 == "issue")|| (dobj2 == "return")) ){
+/*if(((dobj1 == "user")|| (dobj1 == "User")|| (dobj1 == "student") ||((dobj1 == "member"))) && (dobjrel !== "Association") && ((dobj2 == "issue")|| (dobj2 == "return")) ){
   alert(dobjrel +" is not possible between" +dobj1 +"and" +dobj2 );
-}
+}*/
 
-if(((dobj1 == "librarian")) && (dobjrel == "Association") && ((dobj2 == "issue")) ){
+/*if(((dobj1 == "librarian")) && (dobjrel == "Association") && ((dobj2 == "issue")) ){
   var tr = document.createElement('tr');
   tr.setAttribute("id","t5uc2");
   document.getElementById('tbodytbl5').appendChild(tr);
@@ -471,11 +485,30 @@ if(((dobj1 == "librarian")) && (dobjrel !== "Association") && ((dobj2 == "issue"
 if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((dobj2 == "verify") || (dobj2 == "issue")) ){
   alert(dobjrel +" is not possible between two use cases");
 }
-
+*/
   
 
      }
-          
+    /* $('a.removeUC').live('click', function(event) {
+      var txt = $(this).parent().text();
+      event.preventDefault();
+      $(this).parent().remove();
+
+      $("#selectRightActorOrUC option").each(function(index){
+          if (txt == $(this).text())
+          {
+              $(this).remove();
+          }
+      });
+
+      $("#selectLeftActorOrUC option").each(function(index){
+          if (txt == $(this).text())
+          {
+              $(this).remove();
+          }
+      });
+      
+    });*/
       
        
         
@@ -483,15 +516,21 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
       if (typeof(btndel) == "object") {
           $(btndel).closest("tr").remove();
           
-      } else {
-          return false;
+      } 
+     
+
+      else {
+         return false;
       }
   }
  
- var x = document.getElementById("selectactuc1");
+ 
   function removerowuc(btndel) {
-    if (typeof(btndel) == "object") {
+  
+   if (typeof(btndel) == "object") {
+    
         $(btndel).closest("li").remove();
+       
        // x.remove(typeof(btndel));
        
     } else {
@@ -529,12 +568,7 @@ document.getElementById("btnremove").addEventListener("click",function() {
 
 // //document.getElementById("tbl2").rows[1].cells[0].innerHTML = inpt1;
 var paper;
-/*window.onresize = function(event) {
-  paper.setDimensions($('#ucdiagram1').width());
-  paper.setDimensions($('#ucdiagram1').height());
-  paper.scaleContentToFit({minScaleX: 1, minScaleY: 1, maxScaleX: 1 , maxScaleY: 1});
 
-};*/
 var arractor=[];
 var arrreltyp =[];
 var arrucase=[];
@@ -545,7 +579,7 @@ var myTab;
 
 function drawbtnex1(){
  
-  document.getElementById('dispuml1').style.display="block";
+  document.getElementById("dispuml1").style.display="block";
 myTab = document.getElementById('tbl5');
   let indexc1 = document.getElementById('froma').cellIndex;
   let indexc2 = document.getElementById('reltyp').cellIndex; 

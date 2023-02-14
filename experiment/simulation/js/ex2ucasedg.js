@@ -174,7 +174,7 @@ inpt23=document.getElementById("labelt23i").value;
 
 
 
-var myTable = document.getElementById('tbl25');
+/*var myTable = document.getElementById('tbl25');
 
 
 var totalRowCount = myTable.rows.length;
@@ -186,7 +186,7 @@ document.getElementById("drawbtn2").disabled=false;
 }
 else{
 document.getElementById("drawbtn2").disabled=true;
-}
+}*/
 
 //alert(inpt3);
 var rbtn=document.createElement("button");
@@ -505,7 +505,7 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
     tr.appendChild(td4);
     tr.appendChild(td5);
     document.getElementById('tbodytbl25').appendChild(tr);
-    
+
     }
   
     /*  Cancel hotel room --Generalization-- Cancel booking */
@@ -540,7 +540,7 @@ if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj
       }
 
       /*  Cancel flight, cancel hotel room --!Generalization-- Cancel booking */
-      if(((dobj21 == "Cancel hotel room")||(dobj21 == "Cancel flight")) && (dobjrel2 !== "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+      /*if(((dobj21 == "Cancel hotel room")||(dobj21 == "Cancel flight")) && (dobjrel2 !== "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
         alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
         }
     
@@ -778,7 +778,7 @@ function removerowuc2(btndel) {
 
 function drawbtnex2(){
 
-    document.getElementById('dispuml2').style.display="block";
+    document.getElementById("dispuml2").style.display="block";
     myTab = document.getElementById('tbl25');
   
   let indexc2 = document.getElementById('reltyp').cellIndex; 
