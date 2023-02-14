@@ -158,6 +158,7 @@ var ucaseex2=[];
  var objselrel2,dobjrel2,objsel21, dobj21,objsel22,dobj22,inpt23;
  var arrrel2=[];
  var arrlbl2=[];
+ var arr=[];
  function addbtnt23(){
     alert("clicked addbtn t3");
    objsel21= document.getElementById("selectactuc21"); // select 
@@ -174,7 +175,11 @@ inpt23=document.getElementById("labelt23i").value;
 
 
 var myTable = document.getElementById('tbl25');
+
+
 var totalRowCount = myTable.rows.length;
+
+
 if((totalRowCount)== 13){
 
 document.getElementById("drawbtn2").disabled=false;
@@ -194,6 +199,25 @@ var newIconbtn = document.createElement("i");
 newIconbtn.setAttribute("class", "bi bi-dash-circle");
    rbtn.appendChild(newIconbtn);   
 
+
+
+
+   /*arr[0]=dobj21;
+arr[1]=dobjrel2;
+arr[2]=dobj22;
+arr[3]=inpt23;
+arr[4]=rbtn;
+var tabrowindex=0;
+
+tabrowindex + 1;
+
+var row = myTable.insertRow(++tabrowindex); // Row increment
+    for (var q = 0; q <5; q++) {
+
+        var cell = row.insertCell(q);
+        cell.innerHTML = arr[q];
+        //
+    }*/
    /*  Customer --Association-- Make booking */
 if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
 var tr = document.createElement('tr');
@@ -485,7 +509,7 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
     }
   
     /*  Cancel hotel room --Generalization-- Cancel booking */
-    if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
       var tr = document.createElement('tr');
       //tr.setAttribute("id","t5uc");
       document.getElementById('tbodytbl25').appendChild(tr);
@@ -754,7 +778,7 @@ function removerowuc2(btndel) {
 
 function drawbtnex2(){
 
-
+    document.getElementById('dispuml2').style.display="block";
     myTab = document.getElementById('tbl25');
   
   let indexc2 = document.getElementById('reltyp').cellIndex; 

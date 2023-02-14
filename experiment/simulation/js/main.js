@@ -16,6 +16,7 @@ function subex(){
         document.getElementById("show_result").style.display="block";
         document.getElementById("show_result1").style.display="none";
         document.getElementById("show_result2").style.display="none";
+        document.getElementById('dispuml2').style.display="none";
         document.getElementById("dispviewbtn").disabled=false;
         document.getElementById("viewsol").disabled=true;
        
@@ -29,6 +30,7 @@ function subex(){
       document.getElementById("show_result").style.display="block";
       document.getElementById("show_result1").style.display="none";
       document.getElementById("show_result2").style.display="none";
+      document.getElementById('dispuml1').style.display="none";
       document.getElementById("dispviewbtn").disabled=false;
       document.getElementById("viewsol").disabled=true;
      
@@ -543,7 +545,7 @@ var myTab;
 
 function drawbtnex1(){
  
-
+  document.getElementById('dispuml1').style.display="block";
 myTab = document.getElementById('tbl5');
   let indexc1 = document.getElementById('froma').cellIndex;
   let indexc2 = document.getElementById('reltyp').cellIndex; 
