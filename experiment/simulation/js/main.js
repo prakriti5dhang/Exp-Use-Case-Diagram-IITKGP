@@ -249,7 +249,7 @@ select1.appendChild(newOption1);
      var arrrel=[];
      var arrlbl=[];
      function addbtnt3(){
-      alert("clicked addbtn t3");
+     
        objsel1= document.getElementById("selectactuc1");
        dobj1 =objsel1.options[objsel1.selectedIndex].value;
        alert(dobj1);
