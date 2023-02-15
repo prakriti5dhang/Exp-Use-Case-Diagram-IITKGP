@@ -44,12 +44,14 @@ let newOptionID;
 newOptionID = 'newOption_' + inpt21;
   
 let newOption = document.createElement('option');
+
 let optionText = document.createTextNode(inpt21);
 // set option text
 newOption.appendChild(optionText);
 // and option value
 
 newOption.setAttribute("id", newOptionID);
+newOption.setAttribute("class", "classActor");
 newOption.setAttribute('value',inpt21);
 let select1 = document.getElementById('selectactuc21'); 
 select1.appendChild(newOption);
@@ -59,12 +61,14 @@ let newOptionID2;
 newOptionID2 = 'newOption_' + inpt21;
   
 let newOption2 = document.createElement('option');
+
 let optionText2 = document.createTextNode(inpt21);
 // set option text
 newOption2.appendChild(optionText2);
 // and option value
 
 newOption2.setAttribute("id", newOptionID2);
+newOption2.setAttribute("class", "classActor");
 newOption2.setAttribute('value',inpt21);
 let select2 = document.getElementById('selectactuc22'); 
 select2.appendChild(newOption2);
@@ -76,7 +80,7 @@ select2.appendChild(newOption2);
 
 /***************************Function of Table 2 of Exercise 2************************************/
 
-let  inpt22, arruc2=[];;
+let  inpt22;
 var ucaseex2=[];
  function addbtnt22() {
     
@@ -115,8 +119,8 @@ var ucaseex2=[];
   
     document.getElementById('usecased2').appendChild(newLi);
     document.getElementById("inp22").value="";
-    //aactorex2.push(inpt21);
-    ucaseex2.push(inpt22);
+    
+    //ucaseex2.push(inpt22);
    
     /* Use Case=Select option from the dropdown  */
   let newOptionID;
@@ -129,6 +133,7 @@ var ucaseex2=[];
   // and option value
   
   newOption.setAttribute("id", newOptionID);
+  newOption.setAttribute("class", "classUC");
   newOption.setAttribute('value',inpt22);
   let select2 = document.getElementById('selectactuc21'); 
   select2.appendChild(newOption);
@@ -144,6 +149,7 @@ var ucaseex2=[];
   // and option value
   
   newOption1.setAttribute("id", newOptionID1);
+  newOption1.setAttribute("class", "classUC");
   newOption1.setAttribute('value',inpt22);
   let select1 = document.getElementById('selectactuc22'); 
   select1.appendChild(newOption1);
@@ -157,18 +163,29 @@ var ucaseex2=[];
  /*************************************Function for Table 3***********************************************/  
  var objselrel2,dobjrel2,objsel21, dobj21,objsel22,dobj22,inpt23;
  var arrrel2=[];
+ var arruc2=[];
+ 
+ 
  var arrlbl2=[];
  var arr=[];
  function addbtnt23(){
     
    objsel21= document.getElementById("selectactuc21"); // select 
-   dobj21 =objsel21.options[objsel21.selectedIndex].value; // select option actor and ucase
+   dobj21 =objsel21.options[objsel21.selectedIndex].value; // select option actor and ucase from left
    //alert(dobj1);
+   leftClass=objsel21.options[objsel21.selectedIndex].getAttribute("class");
+    alert(leftClass);
    objsel22= document.getElementById("selectactuc22");
-   dobj22 =objsel22.options[objsel22.selectedIndex].value;  // select option actor and ucase
+   dobj22 =objsel22.options[objsel22.selectedIndex].value;  // select option actor and ucase from right
     //alert(dobj2);
+   
+    rightClass=objsel22.options[objsel22.selectedIndex].getAttribute("class");
+    alert(rightClass);
+
     objselrel2= document.getElementById("selectrel2");
     dobjrel2 =objselrel2.options[objselrel2.selectedIndex].value; // select option relationship
+    
+   
      //alert(dobjrel);
 inpt23=document.getElementById("labelt23i").value;
 
@@ -199,8 +216,97 @@ var newIconbtn = document.createElement("i");
 newIconbtn.setAttribute("class", "bi bi-dash-circle");
    rbtn.appendChild(newIconbtn);   
 
+   if((dobj21 == dobj22)){
+    if (leftClass == 'classUC')
+                  {
+                      alert('A use case can not be related with itself');
+                  }else{
+                      alert('An actor can not be related with itself');
+                  }
+                }
+  
+                // Association is not allowed between two use cases 
+                else if ((leftClass == 'classUC') && (rightClass == 'classUC') && (dobjrel2 == 'Association'))
+                  {
+                      alert('Association is not possible between two use cases');
+                  }
+                  // Only generalization is possible between two actors
+                  else if ((leftClass == 'classActor') && (rightClass == 'classActor') && (dobjrel2 != 'Generalization'))
+                  {
+                      alert('Only generalization is possible between two actors');
+                  }
+                
+                  else if((leftClass == 'classUC') && (rightClass == 'classUC') && (dobjrel2 == 'Generalization')){
+                    var tr = document.createElement('tr');
+//tr.setAttribute("id","t5uc");
+document.getElementById('tbodytbl25').appendChild(tr);
+var td1 = document.createElement('td');
+var td2=document.createElement("td");
+var td3=document.createElement("td");
+var td4=document.createElement("td");
+var td5=document.createElement("td");
+var tdval1=document.createTextNode(dobj21);
+var tdval2=document.createTextNode(dobjrel2);
+var tdval3=document.createTextNode(dobj22);
+var tdval4=document.createTextNode(inpt23);
+//var tdval5=document.appendChild(newIconbtn);
+// tbody.appendChild(tr);
 
 
+
+
+td1.appendChild(tdval1);
+td2.appendChild(tdval2);
+td3.appendChild(tdval3);
+td4.appendChild(tdval4);
+td5.appendChild(rbtn);
+
+tr.appendChild(td1);
+tr.appendChild(td2);
+tr.appendChild(td3);
+tr.appendChild(td4);
+tr.appendChild(td5);
+document.getElementById('tbodytbl25').appendChild(tr);
+                  }
+
+                else if ((leftClass != rightClass) && (dobjrel2 != 'Association'))
+                {
+                    alert(dobjrel2 + ' is not possible between ' + dobj21 + ' and ' + dobj22);
+                }
+                else{
+
+                    var tr = document.createElement('tr');
+//tr.setAttribute("id","t5uc");
+document.getElementById('tbodytbl25').appendChild(tr);
+var td1 = document.createElement('td');
+var td2=document.createElement("td");
+var td3=document.createElement("td");
+var td4=document.createElement("td");
+var td5=document.createElement("td");
+var tdval1=document.createTextNode(dobj21);
+var tdval2=document.createTextNode(dobjrel2);
+var tdval3=document.createTextNode(dobj22);
+var tdval4=document.createTextNode(inpt23);
+//var tdval5=document.appendChild(newIconbtn);
+// tbody.appendChild(tr);
+
+
+
+
+td1.appendChild(tdval1);
+td2.appendChild(tdval2);
+td3.appendChild(tdval3);
+td4.appendChild(tdval4);
+td5.appendChild(rbtn);
+
+tr.appendChild(td1);
+tr.appendChild(td2);
+tr.appendChild(td3);
+tr.appendChild(td4);
+tr.appendChild(td5);
+document.getElementById('tbodytbl25').appendChild(tr);
+
+                }
 
    /*arr[0]=dobj21;
 arr[1]=dobjrel2;
@@ -219,7 +325,7 @@ var row = myTable.insertRow(++tabrowindex); // Row increment
         //
     }*/
    /*  Customer --Association-- Make booking */
-if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
+/*if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
 var tr = document.createElement('tr');
 //tr.setAttribute("id","t5uc");
 document.getElementById('tbodytbl25').appendChild(tr);
@@ -252,10 +358,10 @@ tr.appendChild(td5);
 document.getElementById('tbodytbl25').appendChild(tr);
 
 
-}
+}*/
 
 /*  Book flight --Generalization-- Make booking */
-if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
+/*if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
   var tr = document.createElement('tr');
   //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
@@ -290,7 +396,7 @@ if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == 
   
   }
 /*  Book hotel room --Generalization-- Make booking */
-  if(( (dobj21 == "Book hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
+  /*if(( (dobj21 == "Book hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
     var tr = document.createElement('tr');
     //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
@@ -323,17 +429,17 @@ if(((dobj21 == "Book flight")) && (dobjrel2 == "Generalization") && ((dobj22 == 
     document.getElementById('tbodytbl25').appendChild(tr);
     
     
-    }
+    }*/
   
 /*  Book flight --!Generalization-- Make booking */
-    if(( (dobj21 == "Book hotel room")||(dobj21 == "Book flight")) && (dobjrel2 !== "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
+    /*if(( (dobj21 == "Book hotel room")||(dobj21 == "Book flight")) && (dobjrel2 !== "Generalization") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking")) ){
       
       alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
       
-      }
+      }*/
     
 /* Customer --Association-- Make payment */
-if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
+/*if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
 var tr = document.createElement('tr');
 //tr.setAttribute("id","t5uc");
 document.getElementById('tbodytbl25').appendChild(tr);
@@ -365,10 +471,10 @@ tr.appendChild(td4);
 tr.appendChild(td5);
 document.getElementById('tbodytbl25').appendChild(tr);
 
-}
+}*/
 
 /*  Pay by card --Generalization-- Make payment */
-if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
+/*if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
   var tr = document.createElement('tr');
   //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
@@ -400,10 +506,10 @@ if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == 
   tr.appendChild(td5);
   document.getElementById('tbodytbl25').appendChild(tr);
   
-  }
+  }*/
 
   /*  Pay by cash --Generalization-- Make payment */
-  if(((dobj21 == "Pay by cash")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
+  /*if(((dobj21 == "Pay by cash")) && (dobjrel2 == "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
     var tr = document.createElement('tr');
     //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
@@ -435,17 +541,17 @@ if(((dobj21 == "Pay by card")) && (dobjrel2 == "Generalization") && ((dobj22 == 
     tr.appendChild(td5);
     document.getElementById('tbodytbl25').appendChild(tr);
     
-    }
+    }*/
 
     /*  Pay by card, pay by cash--!Generalization-- Make payment */
-    if(((dobj21 == "Pay by cash")||(dobj21 == "Pay by card")) && (dobjrel2 !== "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
+   /* if(((dobj21 == "Pay by cash")||(dobj21 == "Pay by card")) && (dobjrel2 !== "Generalization") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment"))  ){
       
       alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
       
-      }
+      }*/
 
       /* Customer --Association-- Cancel Booking */
-if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+/*if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
   var tr = document.createElement('tr');
   //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
@@ -474,10 +580,10 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
   tr.appendChild(td5);
   document.getElementById('tbodytbl25').appendChild(tr);
   
-  }
+  }*/
 
   /*  Cancel flight --Generalization-- Cancel booking */
-  if(((dobj21 == "Cancel flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+  /*if(((dobj21 == "Cancel flight")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
     var tr = document.createElement('tr');
     //tr.setAttribute("id","t5uc");
     document.getElementById('tbodytbl25').appendChild(tr);
@@ -506,10 +612,10 @@ if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 == "Associatio
     tr.appendChild(td5);
     document.getElementById('tbodytbl25').appendChild(tr);
 
-    }
+    }*/
   
     /*  Cancel hotel room --Generalization-- Cancel booking */
-if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+/*if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
       var tr = document.createElement('tr');
       //tr.setAttribute("id","t5uc");
       document.getElementById('tbodytbl25').appendChild(tr);
@@ -537,25 +643,25 @@ if(((dobj21 == "Cancel hotel room")) && (dobjrel2 == "Generalization") && ((dobj
       tr.appendChild(td4);
       tr.appendChild(td5);
       document.getElementById('tbodytbl25').appendChild(tr);
-      }
+      }*/
 
       /*  Cancel flight, cancel hotel room --!Generalization-- Cancel booking */
       /*if(((dobj21 == "Cancel hotel room")||(dobj21 == "Cancel flight")) && (dobjrel2 !== "Generalization") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
         alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
-        }
+        }*/
     
   /*  Customer --!Association-- Make booking */
-if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 !== "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking") || (dobj22 == "cancel") || (dobj22 == "Cancel booking") || (dobj22 == "Make Payment"))  ){
+/*if(((dobj21 == "customer")|| (dobj21 == "Customer")) && (dobjrel2 !== "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking") || (dobj22 == "cancel") || (dobj22 == "Cancel booking") || (dobj22 == "Make Payment"))  ){
 alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
-}
+}*/
 
 /*  Travel Agent --!Association-- Make booking */
-if(((dobj21 == "Travel agent")|| (dobj21 == "Travel Agent")) && (dobjrel2 !== "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking") || (dobj22 == "cancel") || (dobj22 == "Cancel booking") || (dobj22 == "Make Payment"))  ){
+/*if(((dobj21 == "Travel agent")|| (dobj21 == "Travel Agent")) && (dobjrel2 !== "Association") && ((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking") || (dobj22 == "cancel") || (dobj22 == "Cancel booking") || (dobj22 == "Make Payment"))  ){
   alert(dobjrel2 +" is not possible between" +dobj21 +" and " +dobj22 );
-  }
+  }*/
 
 /*  Travel Agent --Association-- Make booking */
-if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && (((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking"))) ){
+/*if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && (((dobj22 == "make booking") || (dobj22 == "Make booking") || (dobj22 == "booking"))) ){
 var tr = document.createElement('tr');
 //tr.setAttribute("id","t5uc2");
 document.getElementById('tbodytbl25').appendChild(tr);
@@ -589,10 +695,10 @@ tr.appendChild(td5);
 
 document.getElementById('tbodytbl25').appendChild(tr);
 
-}
+}*/
 
 /*  Travel Agent --Association-- Make payment */
-if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment")) ){
+/*if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "make payment") || (dobj22 == "Make payment") || (dobj22 == "payment")) ){
 var tr = document.createElement('tr');
 //tr.setAttribute("id","t5uc2");
 document.getElementById('tbodytbl25').appendChild(tr);
@@ -626,11 +732,11 @@ tr.appendChild(td5);
 
 document.getElementById('tbodytbl25').appendChild(tr);
 
-}
+}*/
 
 
 /*  Travel Agent --Association-- Cancel booking */
-if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
+/*if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Association") && ((dobj22 == "cancel") || (dobj22 == "cancel booking") || (dobj22 == "Cancel booking"))  ){
   var tr = document.createElement('tr');
   //tr.setAttribute("id","t5uc");
   document.getElementById('tbodytbl25').appendChild(tr);
@@ -662,10 +768,10 @@ if(((dobj21 == "Travel agent")||(dobj21 == "Travel Agent")) && (dobjrel2 == "Ass
   tr.appendChild(td5);
   document.getElementById('tbodytbl25').appendChild(tr);
   
-  }
+  }*/
 
 /*  Refund --Extend-- Cancel booking */
-if(((dobj21 == "Cancel")) && (dobjrel2 == "Extend") && ((dobj22 == "Get refund")) ){
+/*if(((dobj21 == "Cancel")) && (dobjrel2 == "Extend") && ((dobj22 == "Get refund")) ){
 var tr = document.createElement('tr');
 //tr.setAttribute("id","t5uc3");
 document.getElementById('tbodytbl5').appendChild(tr);
@@ -696,9 +802,9 @@ tr.appendChild(td4);
 tr.appendChild(td5);
 document.getElementById('tbodytbl25').appendChild(tr);
 
-}
+}*/
 
-if(((dobj21 == "Get refund")) && (dobjrel2 == "Extend") && ((dobj22 == "cancel")) ){
+/*if(((dobj21 == "Get refund")) && (dobjrel2 == "Extend") && ((dobj22 == "cancel")) ){
     var tr = document.createElement('tr');
     //tr.setAttribute("id","t5uc3");
     document.getElementById('tbodytbl5').appendChild(tr);
@@ -729,13 +835,13 @@ if(((dobj21 == "Get refund")) && (dobjrel2 == "Extend") && ((dobj22 == "cancel")
     tr.appendChild(td5);
     document.getElementById('tbodytbl25').appendChild(tr);
     
-    }
+    }*/
 
 /*  Refund --!Extend-- Cancel booking */
 
-if(((dobj21 == "Get refund")|| (dobj21 == "cancel")) && (dobjrel2 !== "Extend") && ((dobj22 == "cancel")|| (dobj22 == "Get refund")) ){
+/*if(((dobj21 == "Get refund")|| (dobj21 == "cancel")) && (dobjrel2 !== "Extend") && ((dobj22 == "cancel")|| (dobj22 == "Get refund")) ){
 alert(dobjrel2 +" is not possible between two use cases");
-}
+}*/
 
 
 
@@ -776,94 +882,123 @@ function removerowuc2(btndel) {
   
 }
 
+var paper;
+var arrreltyp2 =[];
+var actor2ex2 =[];
+var arrucase2 =[];
+var lblarr2 = [];
+var myTab2;
 function drawbtnex2(){
 
     document.getElementById("dispuml2").style.display="block";
-    myTab = document.getElementById('tbl25');
-  
-  let indexc2 = document.getElementById('reltyp').cellIndex; 
-  let indexc3 = document.getElementById('toa').cellIndex; 
-  let indexc4 = document.getElementById('lbl').cellIndex;
+    myTab2 = document.getElementById('tbl25');
+  let indexc1 = document.getElementById('froma2').cellIndex; 
+  let indexc2 = document.getElementById('reltyp2').cellIndex; 
+  let indexc3 = document.getElementById('toa2').cellIndex; 
+  let indexc4 = document.getElementById('lbl2').cellIndex;
 
-    for (r = 1; r < myTab.rows.length; r++) {
+
+
+  for (a = 1; a < myTab2.rows.length; a++) {
+
+    // GET THE CELLS COLLECTION OF THE CURRENT ROW.
+    var objCellsa = myTab2.rows.item(a).cells;
+
+   for (var i = indexc1; i <= indexc2; i++) {
+    var ex2act= objCellsa.item(k).innerText;
+}
+
+actorex2.push(ex2act);
+}
+console.log(actorex2);
+
+    for (r = 1; r < myTab2.rows.length; r++) {
 
         // GET THE CELLS COLLECTION OF THE CURRENT ROW.
-        var objCellsr = myTab.rows.item(r).cells;
+        var objCellsr = myTab2.rows.item(r).cells;
 
        for (var k = indexc2; k <= indexc2; k++) {
-        var ex1rel= objCellsr.item(k).innerText;
+        var ex2rel= objCellsr.item(k).innerText;
     }
    
-    arrrel.push(ex1rel);
+    arrrel2.push(ex2rel);
   }
-  console.log(arrrel);
+  console.log(arrrel2);
 
 
-  for (u = 1; u < myTab.rows.length; u++) {
+  for (u = 1; u < myTab2.rows.length; u++) {
 
     // GET THE CELLS COLLECTION OF THE CURRENT ROW.
-    var objCellsu = myTab.rows.item(u).cells;
+    var objCellsu = myTab2.rows.item(u).cells;
     for (var l = indexc3; l <= indexc3; l++) {
-      var ex1uc=objCellsu.item(l).innerText;
+      var ex2uc=objCellsu.item(l).innerText;
   }
-  arruc.push(ex1uc);
+  arruc2.push(ex2uc);
   }
-  console.log(arruc);
+  console.log(arruc2);
  
-  for (lb = 1; lb < myTab.rows.length; lb++) {
+  for (lb = 1; lb < myTab2.rows.length; lb++) {
 
     // GET THE CELLS COLLECTION OF THE CURRENT ROW.
-    var objCellsl = myTab.rows.item(lb).cells;
+    var objCellsl = myTab2.rows.item(lb).cells;
      for (var m = indexc4; m <= indexc4; m++) {
-      var ex1lb= objCellsl.item(m).innerText;
+      var ex2lb= objCellsl.item(m).innerText;
   }
- arrlbl.push(ex1lb);
+ arrlbl2.push(ex2lb);
 }
   
-console.log(arrlbl);
+console.log(arrlbl2);
 
 
-
-function removeDuplicatesrel(arrrel) {
+function removeDuplicatesact2(actorex2) {
        
-    arrrel.forEach(element => {
-        if (!arrreltyp.includes(element)) {
-          arrreltyp.push(element);
+    actorex2.forEach(element => {
+        if (!actor2ex2.includes(element)) {
+            actor2ex2.push(element);
         }
     });
-    return arrreltyp;
+    return actor2ex2;
 }
-function removeDuplicatesuc(arruc) {
+
+function removeDuplicatesrel2(arrrel2) {
+       
+    arrrel2.forEach(element => {
+        if (!arrreltyp2.includes(element)) {
+          arrreltyp2.push(element);
+        }
+    });
+    return arrreltyp2;
+}
+function removeDuplicatesuc2(arruc2) {
      
-  arruc.forEach(element => {
-      if (!arrucase.includes(element)) {
-        arrucase.push(element);
+  arruc2.forEach(element => {
+      if (!arrucase2.includes(element)) {
+        arrucase2.push(element);
       }
   });
-  return arrucase;
+  return arrucase2;
 }
 
-function removeDuplicateslbl(arrlbl) {
+function removeDuplicateslbl2(arrlbl2) {
      
-arrlbl.forEach(element => {
-    if (!lblarr.includes(element)) {
-      lblarr.push(element);
+arrlbl2.forEach(element => {
+    if (!lblarr2.includes(element)) {
+      lblarr2.push(element);
     }
 });
-return lblarr;
+return lblarr2;
 }
 
-  
-  console.log(removeDuplicatesrel(arrrel));
-  console.log(removeDuplicatesuc(arruc));
-  console.log(removeDuplicateslbl(arrlbl));
+console.log(removeDuplicatesact2(actorex2));
+  console.log(removeDuplicatesrel2(arrrel2));
+  console.log(removeDuplicatesuc2(arruc2));
+  console.log(removeDuplicateslbl2(arrlbl2));
 
   
-
-   
-    console.log(arrreltyp);
-    console.log(arrucase);
-    console.log(lblarr);
+    console.log(actor2ex2);
+    console.log(arrreltyp2);
+    console.log(arrucase2);
+    console.log(lblarr2);
 
 
 
@@ -889,21 +1024,20 @@ return lblarr;
             
             cellViewNamespace: namespace
         });
+        
 
-        $(window).resize(function() {
-          var diagramsize = $('#ucdiagram2');
-          paper.setDimensions(diagramsize.width(), diagramsize.height());
-      });
-        /*paper.setDimensions($('#ucdiagram1').width());
-        paper.setDimensions($('#ucdiagram1').height());
-        paper.scaleContentToFit({minScaleX: 1, minScaleY: 1, maxScaleX: 1 , maxScaleY: 1});*/
+        
+      $(window).resize(function() {
+        var diagramsize2 = $('#ucdiagram2');
+        paper.setDimensions(diagramsize2.width(), diagramsize2.height());
+    });
 
         var actor1 = new joint.shapes.standard.Image();
         actor1.resize(120, 90);
         actor1.position(0,205);
         //actor1.position(103, 15);
         actor1.attr('root/title', 'joint.shapes.standard.BoarderedImage');
-        actor1.attr('label/text', actorex2[0]);
+        actor1.attr('label/text', actor2ex2[0]);
         actor1.attr('label/fontSize', 16);
         actor1.attr('body/strokeWidth', 2);
         actor1.attr('border/rx', 2);
@@ -922,7 +1056,7 @@ return lblarr;
  actor2.position(452, 191);
  //actor2.position(316, 15);
  actor2.attr('root/title', 'joint.shapes.standard.BoarderedImage');
- actor2.attr('label/text', actorex2[1]);
+ actor2.attr('label/text', actor2ex2[1]);
  actor2.attr('label/fontSize', 16);
  actor2.attr('body/strokeWidth', 2);
  actor2.attr('border/rx', 2);
@@ -945,7 +1079,7 @@ uc21.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[0],
+        text: arrucase2[0],
         fill: 'black',
         fontSize: 16,
         
@@ -966,7 +1100,7 @@ uc22.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[1],
+        text: arrucase2[1],
         fill: 'black',
         fontSize: 16,
         
@@ -987,7 +1121,7 @@ uc23.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[2],
+        text: arrucase2[2],
         fill: 'black',
         fontSize: 16,
         
@@ -1008,7 +1142,7 @@ uc24.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[3],
+        text: actor2ex2[2],
         fill: 'black',
         fontSize: 16,
         
@@ -1032,7 +1166,7 @@ uc25.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[4],
+        text: actor2ex2[3],
         fill: 'black',
         fontSize: 16,
         
@@ -1053,7 +1187,7 @@ uc26.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[5],
+        text: actor2ex2[3],
         fill: 'black',
         fontSize: 16,
         
@@ -1074,7 +1208,7 @@ uc27.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[6],
+        text: actor2ex2[4],
         fill: 'black',
         fontSize: 16,
         
@@ -1096,7 +1230,7 @@ uc28.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[7],
+        text: actor2ex2[5],
         fill: 'black',
         fontSize: 16,
         
@@ -1117,7 +1251,7 @@ uc29.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[8],
+        text: actor2ex2[6],
         fill: 'black',
         fontSize: 16,
         
@@ -1138,7 +1272,7 @@ uc210.attr({
         strokeWidth: 2
     },
     label: {
-        text: ucaseex2[9],
+        text: actor2ex2[7],
         fill: 'black',
         fontSize: 16,
         
