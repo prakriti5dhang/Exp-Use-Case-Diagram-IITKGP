@@ -1,7 +1,7 @@
 /*Redeveloped
 Lab: Software Engineering
 Exp:Modeling UML Use Case Diagrams and Capturing Use Case Scenarios
-File Name: ex2ucasedg.js.js
+File Name: ex2ucasedg.js
 Author: Prakriti Dhang*/
 
 /******************************Function of Table 1 of Exercise 2*************************************/
@@ -1187,7 +1187,7 @@ uc26.attr({
         strokeWidth: 2
     },
     label: {
-        text: actor2ex2[3],
+        text: actor2ex2[4],
         fill: 'black',
         fontSize: 16,
         
@@ -1208,7 +1208,7 @@ uc27.attr({
         strokeWidth: 2
     },
     label: {
-        text: actor2ex2[4],
+        text: actor2ex2[5],
         fill: 'black',
         fontSize: 16,
         
@@ -1230,7 +1230,7 @@ uc28.attr({
         strokeWidth: 2
     },
     label: {
-        text: actor2ex2[5],
+        text: actor2ex2[6],
         fill: 'black',
         fontSize: 16,
         
@@ -1251,7 +1251,7 @@ uc29.attr({
         strokeWidth: 2
     },
     label: {
-        text: actor2ex2[6],
+        text: actor2ex2[7],
         fill: 'black',
         fontSize: 16,
         
@@ -1272,7 +1272,7 @@ uc210.attr({
         strokeWidth: 2
     },
     label: {
-        text: actor2ex2[7],
+        text: actor2ex2[8],
         fill: 'black',
         fontSize: 16,
         
