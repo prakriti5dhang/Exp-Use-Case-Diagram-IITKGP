@@ -716,7 +716,7 @@ function removeDuplicateslbl(arrlbl) {
             //height:  $('#ucdiagram1').height(), // height had to be increased
            
             background: {
-                color: 'rgba(0, 255, 0, 0.3)'
+                color: '#FFFFFF'
             },
             
             cellViewNamespace: namespace
@@ -768,7 +768,7 @@ function removeDuplicateslbl(arrlbl) {
         uc1.resize(100, 40);
         uc1.attr({
             body: {
-                fill: '#ffffff',
+                fill: '#DAFF94',
                 rx: 20,
                 ry: 20,
                 strokeWidth: 2
@@ -788,7 +788,7 @@ function removeDuplicateslbl(arrlbl) {
         uc2.resize(100, 40);
         uc2.attr({
             body: {
-                fill: '#ffffff',
+                fill: '#DAFF94',
                 rx: 20,
                 ry: 20,
                 strokeWidth: 2
@@ -807,7 +807,7 @@ function removeDuplicateslbl(arrlbl) {
         uc3.resize(100, 40);
         uc3.attr({
             body: {
-                fill: '#ffffff',
+                fill: '#DAFF94',
                 rx: 20,
                 ry: 20,
                 strokeWidth: 2

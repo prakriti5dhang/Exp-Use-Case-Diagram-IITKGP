@@ -1019,7 +1019,7 @@ console.log(removeDuplicatesact2(actorex2));
             //height:  $('#ucdiagram1').height(), // height had to be increased
            
             background: {
-                color: 'rgba(0, 255, 0, 0.3)'
+                color: '#FFFFFF'
             },
             
             cellViewNamespace: namespace
@@ -1073,7 +1073,7 @@ uc21.position(153, 90);
 uc21.resize(100, 40);
 uc21.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#DAFF94',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1094,7 +1094,7 @@ uc22.position(170, 241);
 uc22.resize(100, 40);
 uc22.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#DAFF94',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1115,7 +1115,7 @@ uc23.position(134, 391);
 uc23.resize(100, 40);
 uc23.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#DAFF94',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1136,7 +1136,7 @@ uc24.position(142,174);
 uc24.resize(100, 40);
 uc24.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1160,7 +1160,7 @@ uc25.position(259, 180);
 uc25.resize(100, 40);
 uc25.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1181,7 +1181,7 @@ uc26.position(134, 305);
 uc26.resize(100, 40);
 uc26.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1202,7 +1202,7 @@ uc27.position(261, 289);
 uc27.resize(100, 40);
 uc27.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1224,7 +1224,7 @@ uc28.position(58, 477);
 uc28.resize(100, 40);
 uc28.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1245,7 +1245,7 @@ uc29.position(203, 478);
 uc29.resize(100, 40);
 uc29.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
@@ -1266,7 +1266,7 @@ uc210.position(360, 438);
 uc210.resize(100, 40);
 uc210.attr({
     body: {
-        fill: '#ffffff',
+        fill: '#CFFDFF',
         rx: 20,
         ry: 20,
         strokeWidth: 2
