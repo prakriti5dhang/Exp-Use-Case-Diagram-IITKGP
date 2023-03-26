@@ -1027,14 +1027,14 @@ console.log(removeDuplicatesact2(actorex2));
         
 
         
-      $(window).resize(function() {
+    /*  $(window).resize(function() {
         var diagramsize2 = $('#ucdiagram2');
         paper.setDimensions(diagramsize2.width(), diagramsize2.height());
-    });
+    });*/
 
         var actor1 = new joint.shapes.standard.Image();
         actor1.resize(120, 90);
-        actor1.position(0,205);
+        actor1.position(-21,211);
         //actor1.position(103, 15);
         actor1.attr('root/title', 'joint.shapes.standard.BoarderedImage');
         actor1.attr('label/text', actor2ex2[0]);
@@ -1053,7 +1053,7 @@ console.log(removeDuplicatesact2(actorex2));
 
  var actor2 = new joint.shapes.standard.Image();
  actor2.resize(120, 90);
- actor2.position(452, 191);
+ actor2.position(534, 186);
  //actor2.position(316, 15);
  actor2.attr('root/title', 'joint.shapes.standard.BoarderedImage');
  actor2.attr('label/text', actor2ex2[1]);
@@ -1069,8 +1069,8 @@ console.log(removeDuplicatesact2(actorex2));
 var uc21 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
 
-uc21.position(153, 90);
-uc21.resize(100, 40);
+uc21.position(138, 28);
+uc21.resize(120, 50);
 uc21.attr({
     body: {
         fill: '#DAFF94',
@@ -1089,9 +1089,9 @@ uc21.addTo(graph);
 
 /* Use Case 2 */
 var uc22 = new joint.shapes.standard.Ellipse();
-//uc1.position(112, 180);
-uc22.position(170, 241);
-uc22.resize(100, 40);
+//uc1.position(172, 204);
+uc22.position(165, 205);
+uc22.resize(120, 50);
 uc22.attr({
     body: {
         fill: '#DAFF94',
@@ -1111,8 +1111,8 @@ uc22.addTo(graph);
 /* Use Case 3 */
 var uc23 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
-uc23.position(134, 391);
-uc23.resize(100, 40);
+uc23.position(156, 365);
+uc23.resize(120, 50);
 uc23.attr({
     body: {
         fill: '#DAFF94',
@@ -1132,8 +1132,8 @@ uc23.addTo(graph);
 /* Use Case 4 */
 var uc24 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
-uc24.position(142,174);
-uc24.resize(100, 40);
+uc24.position(126,137);
+uc24.resize(120, 50);
 uc24.attr({
     body: {
         fill: '#CFFDFF',
@@ -1156,8 +1156,8 @@ uc24.addTo(graph);
 /* Use Case 5 */
 var uc25 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
-uc25.position(259, 180);
-uc25.resize(100, 40);
+uc25.position(251, 134);
+uc25.resize(120, 50);
 uc25.attr({
     body: {
         fill: '#CFFDFF',
@@ -1177,8 +1177,8 @@ uc25.addTo(graph);
 /* Use Case 6 */
 var uc26 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
-uc26.position(134, 305);
-uc26.resize(100, 40);
+uc26.position(124, 285);
+uc26.resize(120, 50);
 uc26.attr({
     body: {
         fill: '#CFFDFF',
@@ -1198,8 +1198,8 @@ uc26.addTo(graph);
 /* Use Case 7 */
 var uc27 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
-uc27.position(261, 289);
-uc27.resize(100, 40);
+uc27.position(257, 282);
+uc27.resize(120, 50);
 uc27.attr({
     body: {
         fill: '#CFFDFF',
@@ -1221,7 +1221,7 @@ uc27.addTo(graph);
 var uc28 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
 uc28.position(58, 477);
-uc28.resize(100, 40);
+uc28.resize(120, 50);
 uc28.attr({
     body: {
         fill: '#CFFDFF',
@@ -1242,7 +1242,7 @@ uc28.addTo(graph);
 var uc29 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
 uc29.position(203, 478);
-uc29.resize(100, 40);
+uc29.resize(120, 50);
 uc29.attr({
     body: {
         fill: '#CFFDFF',
@@ -1263,7 +1263,7 @@ uc29.addTo(graph);
 var uc210 = new joint.shapes.standard.Ellipse();
 //uc1.position(112, 180);
 uc210.position(360, 438);
-uc210.resize(100, 40);
+uc210.resize(120, 50);
 uc210.attr({
     body: {
         fill: '#CFFDFF',
