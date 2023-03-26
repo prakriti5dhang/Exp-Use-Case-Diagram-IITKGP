@@ -52,6 +52,7 @@ function subex(){
 function viewsolutionb(){
     document.getElementById("viewsol").disabled=false;
     document.getElementById("dispviewbtn").disabled=true;
+    window.scrollBy(0, 1800);
 }
 
 function solview(){
