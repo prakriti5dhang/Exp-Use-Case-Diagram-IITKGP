@@ -11,7 +11,8 @@ function subex(){
         document.getElementById("exercise1").style.display="block";
         document.getElementById("ex1").style.display="block";
         document.getElementById("exercise2").style.display="none";    
-        document.getElementById("ex2").style.display="none";    
+        document.getElementById("ex2").style.display="none";  
+        document.getElementById("para1").style.display="block";    
         document.getElementById("dispres").style.display="block";
         document.getElementById("show_result").style.display="block";
         document.getElementById("show_result1").style.display="none";
@@ -27,6 +28,7 @@ function subex(){
       document.getElementById("exercise1").style.display="none";
       document.getElementById("ex2").style.display="block"; 
       document.getElementById("dispres").style.display="block";
+      document.getElementById("para1").style.display="block";
       document.getElementById("show_result").style.display="block";
       document.getElementById("show_result1").style.display="none";
       document.getElementById("show_result2").style.display="none";
@@ -39,6 +41,7 @@ function subex(){
     if(ex.options[ex.selectedIndex].value==0){
         document.getElementById("exercise1").style.display="none";
         document.getElementById("ex1").style.display="none";
+        document.getElementById("para1").style.display="none";
         document.getElementById("exercise2").style.display="none";
         document.getElementById("dispres").style.display="none";
         document.getElementById("show_result").style.display="none";
@@ -238,17 +241,17 @@ select1.appendChild(newOption1);
       
        objsel1= document.getElementById("selectactuc1");
        dobj1 =objsel1.options[objsel1.selectedIndex].value;
-       alert(dobj1);
+       //alert(dobj1);
        leftClass=objsel1.options[objsel1.selectedIndex].getAttribute("class");
-       alert(leftClass);
+       //alert(leftClass);
        objsel2= document.getElementById("selectactuc2");
        dobj2 =objsel2.options[objsel2.selectedIndex].value;
-        alert(dobj2);
+        //alert(dobj2);
         rightClass=objsel2.options[objsel2.selectedIndex].getAttribute("class");
-       alert(rightClass);
+       //alert(rightClass);
         objselrel= document.getElementById("selectrel");
         dobjrel =objselrel.options[objselrel.selectedIndex].value;
-         alert(dobjrel);
+         //alert(dobjrel);
   inpt3=document.getElementById("labelt3i").value;
   
 
@@ -513,7 +516,7 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
     });*/
       
        
-        
+      /** Removes row in table 5 **/  
      function removerow(btndel) {
       if (typeof(btndel) == "object") {
           $(btndel).closest("tr").remove();
@@ -526,22 +529,32 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
       }
   }
  
- 
+  /** Removes li in table 4 **/
   function removerowuc(btndel) {
   
    if (typeof(btndel) == "object") {
     
         $(btndel).closest("li").remove();
+          
+          
+        var selectobject = document.getElementById("selectactuc21");
+        for (var i=0; i<selectobject.length; i++) {
+          if (selectobject.options[i].value == 'newOption_' + inpt1)
+              selectobject.remove(i);
+      }   
        
        // x.remove(typeof(btndel));
        
     } else {
         return false;
     }
-    
+   
     
 }
 
+/*function removerowuc(){
+$("#selectactuc21 option[value='dv']").remove(); 
+}
 /*
 
 document.getElementById("btnremove").addEventListener("click",function() {

@@ -174,13 +174,13 @@ var ucaseex2=[];
    dobj21 =objsel21.options[objsel21.selectedIndex].value; // select option actor and ucase from left
    //alert(dobj1);
    leftClass=objsel21.options[objsel21.selectedIndex].getAttribute("class");
-    alert(leftClass);
+    //alert(leftClass);
    objsel22= document.getElementById("selectactuc22");
    dobj22 =objsel22.options[objsel22.selectedIndex].value;  // select option actor and ucase from right
     //alert(dobj2);
    
     rightClass=objsel22.options[objsel22.selectedIndex].getAttribute("class");
-    alert(rightClass);
+   //alert(rightClass);
 
     objselrel2= document.getElementById("selectrel2");
     dobjrel2 =objselrel2.options[objselrel2.selectedIndex].value; // select option relationship
