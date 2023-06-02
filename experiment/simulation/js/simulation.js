@@ -5,7 +5,17 @@ File Name: simulation.js
 Author: Prakriti Dhang */
 
 function playsimulation(){
-   
+    document.getElementById("goend").disabled=true;
+    document.getElementById("gostrt").disabled=true;
+   // const highlighttxt = document.getElementById('mu1');
+   // highlighttxt.style.background= "linear-gradient(90deg,white 0%, rgba(255, 255, 255, 0) 50%)";
+   // highlighttxt.style.webkitAnimationPlayState = "running";
+   // const highlighttxtu7 = document.getElementById('mu7');
+   // highlighttxtu7.style.background="linear-gradient(90deg,white 0%, rgba(255, 255, 255, 0) 50%)";
+    document.getElementById("du31").style.display="none";
+    document.getElementById("pm1").style.display="none";
+    document.getElementById("pm3").style.display="none";
+    document.getElementById("du11").style.display="none";
     document.getElementById("playbtn").style.display="none";
     document.getElementById("pausebtn").style.display="block";
     const highlightxt = document.getElementById('m1');
@@ -76,6 +86,7 @@ function mactor33(){
 
 function mhuc1(){
     const highlightxtu1 = document.getElementById('mu1');
+    //highlightxtu1.style.background= "linear-gradient(90deg, orange 50%, rgba(255, 255, 255, 0) 50%)";
     highlightxtu1.style.webkitAnimationPlayState = "running";
     const highlightxt3 = document.getElementById('m3');
     highlightxt3.style.background=" linear-gradient(90deg, white 50%, rgba(255, 255, 255, 0) 50%)";
@@ -179,6 +190,7 @@ function muc6(){
 }
 function mhuc7(){
     const highlightxtu7 = document.getElementById('mu7');
+   // highlightxtu7.style.background= "linear-gradient(90deg, orange 50%, rgba(255, 255, 255, 0) 50%)";
     highlightxtu7.style.webkitAnimationPlayState = "running";
     const highlightxtu6 = document.getElementById('mu6');
     highlightxtu6.style.background=" linear-gradient(90deg, white 50%, rgba(255, 255, 255, 0) 50%)";
@@ -201,6 +213,8 @@ function stopsimulation(){
     highlightxtu7.style.background=" linear-gradient(90deg, white 50%, rgba(255, 255, 255, 0) 50%)";
     document.getElementById("playbtn").style.display="block";
     document.getElementById("pausebtn").style.display="none";
+    document.getElementById("goend").disabled=false;
+    document.getElementById("gostrt").disabled=false;
     clearTimeout(stopani);
 }
 }
@@ -242,10 +256,11 @@ function pausesimulation(){
 function gostart(){
 
     const highlighttxt = document.getElementById('mu1');
+    highlighttxt.style.background= "linear-gradient(90deg, orange 100%, rgba(255, 255, 255, 0) 50%)";
     highlighttxt.style.webkitAnimationPlayState = "running";
-    const highlighttxt3 = document.getElementById('mu7');
-    highlighttxt3.style.background="linear-gradient(90deg,white 50%, rgba(255, 255, 255, 0) 50%)";
-    stopani = setTimeout(gostarts, 3000);
+    const highlighttxtu7 = document.getElementById('mu7');
+    highlighttxtu7.style.background="linear-gradient(90deg,white 50%, rgba(255, 255, 255, 0) 50%)";
+    stopani = setTimeout(gostarts,200);
  
     function gostarts(){
     document.getElementById("pm1").style.display="block";
@@ -267,11 +282,12 @@ function gostart(){
 
 function goend(){
 
-    const highlighttxt3 = document.getElementById('mu7');
-  highlighttxt3.style.webkitAnimationPlayState = "running";
+    const highlighttxtu7 = document.getElementById('mu7');
+    highlighttxtu7.style.background= "linear-gradient(90deg, orange 100%, rgba(255, 255, 255, 0) 50%)";
+  highlighttxtu7.style.webkitAnimationPlayState = "running";
   const highlighttxt1 = document.getElementById('mu1');
     highlighttxt1.style.background="linear-gradient(90deg,white 50%, rgba(255, 255, 255, 0) 50%)";
-    stopani = setTimeout(goends, 3000);
+    stopani = setTimeout(goends, 200);
 
     function goends(){
 

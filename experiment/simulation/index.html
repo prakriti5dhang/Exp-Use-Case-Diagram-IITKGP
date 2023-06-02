@@ -74,24 +74,24 @@ Author: Prakriti Dhang -->
                         </p>
                       </div>     
 
- <div class="card card-body p-2" id="pm1"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #00ccff 0%, #66ffcc 100%);">
-    <p id="da11" class="fs-5" style="display:none; text-align: justify;"> Actor: <b>Customer</b><br> Customer uses the ATM to fulfill his 
-    goals like to withdarw, deposit money.</p>
-    <p id="du11" class="fs-5" style="display:none; text-align: justify;"> Use Case: <b>Withdraw Cash</b><br> Withdraw cash from the ATM.</p>
+ <div class="card card-body p-2" id="pm1"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #c0f2ff 0%, #beffe9 100%);">
+    <p id="da11" class="fs-5 fst-italic" style="display:none; text-align: justify;">Actor: <b>Customer</b><br> Customer uses the ATM to fulfill his 
+    goals like to withdraw, deposit money.</p>
+    <p id="du11" class="fs-5 fst-italic" style="display:none; text-align: justify;"> Use Case: <b>Withdraw Cash</b><br> Withdraw cash from the ATM.</p>
  </div>
 
- <div class="card card-body p-2" id="pm2"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #00ccff 0%, #66ffcc 100%);">
-  <p id="da21" class="fs-5" style="display:none; text-align: justify;">Actor: <b>Bank Representative</b> <br>Replenishes stock of cash in the ATM.</p>
-  <p id="du21" class="fs-5" style="display:none; text-align: justify;">Use Case: <b>Authenticate</b><br> Authenticate user by checking his ATM card and PIN.</p>
-  <p id="du22" class="fs-5" style="display:none; text-align: justify;">Use Case: <b>Change PIN</b> <br>Authenticated users can change their PIN.</p>
-  <p id="du23" class="fs-5" style="display:none; text-align: justify;">Use Case: <b>Deposit Cash</b><br> Authenticated users can deposit cash.</p>
-  <p id="du24" class="fs-5" style="display:none; text-align: justify;">Use Case:<b>Pay Bill</b><br> Authenticated users can pay bills.</p>
-  <p id="du25" class="fs-5" style="display:none; text-align: justify;">Use Case: <b>Replenish cash</b><br> Replenish stock of cash in the ATM.</p>
+ <div class="card card-body p-2" id="pm2"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #c0f2ff 0%, #beffe9 100%);">
+  <p id="da21" class="fs-5 fst-italic" style="display:none; text-align: justify;">Actor: <b>Bank Representative</b> <br> Replenishes stock of cash in the ATM.</p>
+  <p id="du21" class="fs-5 fst-italic" style="display:none; text-align: justify;">Use Case: <b>Authenticate</b><br> Authenticate user by checking his ATM card and PIN.</p>
+  <p id="du22" class="fs-5 fst-italic" style="display:none; text-align: justify;">Use Case: <b>Change PIN</b> <br> Authenticated users can change their PIN.</p>
+  <p id="du23" class="fs-5 fst-italic" style="display:none; text-align: justify;">Use Case: <b>Deposit Cash</b><br> Authenticated users can deposit cash.</p>
+  <p id="du24" class="fs-5 fst-italic" style="display:none; text-align: justify;">Use Case: <b>Pay Bill</b><br> Authenticated users can pay bills.</p>
+  <p id="du25" class="fs-5 fst-italic" style="display:none; text-align: justify;">Use Case: <b>Replenish cash</b><br> Replenish stock of cash in the ATM.</p>
 </div>
-<div class="card card-body p-2" id="pm3"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #00ccff 0%, #66ffcc 100%);">
+<div class="card card-body p-2" id="pm3"  style="display:none; border:1px solid rgb(1, 68, 250);border-radius: 8px; background: linear-gradient(to bottom, #c0f2ff 0%, #beffe9 100%);">
   
-  <p id="da31" class="fs-5" style="display:none; text-align: justify;"> Actor:<b>Maintainace Person</b> <br>Fixes the ATM if there is any fault.</p>
-  <p id="du31" class="fs-5" style="display:none; text-align: justify;"> Use Case:<b>Fix ATM</b> <br>Repair the ATM if it's not working.</p>
+  <p id="da31" class="fs-5 fst-italic" style="display:none; text-align: justify;"> Actor: <b>Maintenance Person</b> <br> Fixes the ATM if there is any fault.</p>
+  <p id="du31" class="fs-5 fst-italic" style="display:none; text-align: justify;"> Use Case: <b>Fix ATM</b> <br> Repair the ATM if it's not working.</p>
 
 </div>
 
@@ -99,11 +99,11 @@ Author: Prakriti Dhang -->
 <!--/div-->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center border border-1 border-info p-2 rounded-1" style="background: linear-gradient(to bottom right, #ccffff 0%, #ffffff 99%);">
                     
-                    <button type="button" class="btn btn-info fs-5" onclick="gostart()">
+                    <button type="button" id="gostrt" class="btn btn-info fs-5" onclick="gostart()" disabled>
                       <i class="fas fa-step-backward "></i></button>
                     <button id="playbtn" type="button" class="btn btn-info fs-5" onclick="playsimulation()"> Click to Play <i class="fas fa-play  "></i></button>
                     <button id="pausebtn" type="button" class="btn btn-warning fs-5" onclick="pausesimulation()" style="display: none;"> Pause <i class="fas fa-pause "></i></button>
-                    <button type="button" class="btn btn-info fs-5" onclick="goend()"><i class="fas fa-step-forward "></i></button>
+                    <button type="button" id="goend" class="btn btn-info fs-5" onclick="goend()" disabled><i class="fas fa-step-forward " ></i></button>
                
                   </div>
                 </div>
