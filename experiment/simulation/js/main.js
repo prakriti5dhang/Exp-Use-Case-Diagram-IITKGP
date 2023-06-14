@@ -539,23 +539,21 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
   
    if (typeof(btndel) == "object") {
     
-        
-          
-          
-       /* var selectoption = document.getElementById("selectactuc1");
-        for (var i = 0; i < selectoption.options.length; i++) {
-          if (selectoption.options[i].value == "dfd") {
-            selectoption.options[i].remove();
-            break; // Exit the loop after removing the option
-          }
-        }*/
+    
         var listItemValue = $(btndel).closest("li").data("value");
         //console.log(listItemValue);
         $(btndel).closest("li").remove();
         $("#selectactuc1").find('option[value="' + listItemValue + '"]').remove();
         $("#selectactuc2").find('option[value="' + listItemValue + '"]').remove();
        
+        var index = actorex1.indexOf(listItemValue);
+        if (index !== -1) {
+          actorex1.splice(index, 1);
+        }
+        console.log(actorex1);
+
        
+  
     } else {
         return false;
     }

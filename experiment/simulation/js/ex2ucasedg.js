@@ -868,7 +868,11 @@ function removerowact2(btndel) {
         $(btndel).closest("li").remove();
         $("#selectactuc21").find('option[value="' + listItemValue2 + '"]').remove();
         $("#selectactuc22").find('option[value="' + listItemValue2 + '"]').remove();
-       
+        var index = actorex2.indexOf(listItemValue);
+        if (index !== -1) {
+          actorex2.splice(index, 1);
+        }
+        console.log(actorex2);
        
     } else {
         return false;
@@ -884,6 +888,8 @@ function removerowuc2(btndel) {
         $(btndel).closest("li").remove();
         $("#selectactuc21").find('option[value="' + listItemValue2 + '"]').remove();
         $("#selectactuc22").find('option[value="' + listItemValue2 + '"]').remove();
+
+        
      
   } else {
       return false;
