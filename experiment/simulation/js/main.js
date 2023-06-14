@@ -100,13 +100,14 @@ inpt1=document.getElementById("inp1").value;
   //rbtn.appendChild(newIconbtn);   
 
 newLi = document.createElement("li");
-newdiv = document.createElement("div");
-newdiv.setAttribute("class", "form-check");
-newLi.appendChild(newdiv);
+newLi.setAttribute("data-value", inpt1)
+//newdiv = document.createElement("div");
+//newdiv.setAttribute("class", "form-check");
+//newLi.appendChild(newdiv);
 
 let liTextNodeact = document.createTextNode(inpt1);
-newdiv.appendChild(liTextNodeact);
-newdiv.appendChild(newIconbtn);
+newLi.appendChild(liTextNodeact);
+newLi.appendChild(newIconbtn);
         // this just makes sure a user cant enter in a blank value
   
   if (inpt1 == "") {
@@ -177,13 +178,14 @@ let  inpt2, arruc=[];;
   newIconbtn.setAttribute("style","cursor:pointer;");
 
   newLi = document.createElement("li");
-  newdiv = document.createElement("div");
-  newdiv.setAttribute("class", "form-check");
-  newLi.appendChild(newdiv);
+  newLi.setAttribute("data-value", inpt2);
+  //newdiv = document.createElement("div");
+  //newdiv.setAttribute("class", "form-check");
+  //newLi.appendChild(newdiv);
   
   let liTextNodeuc = document.createTextNode(inpt2);
-  newdiv.appendChild(liTextNodeuc);
-  newdiv.appendChild(newIconbtn); 
+ newLi.appendChild(liTextNodeuc);
+  newLi.appendChild(newIconbtn); 
           // this just makes sure a user cant enter in a blank value
     
     if (inpt2 == "") {
@@ -537,16 +539,22 @@ if(((dobj1 == "issue")|| (dobj1 == "verify")) && (dobjrel !== "Include") && ((do
   
    if (typeof(btndel) == "object") {
     
+        
+          
+          
+       /* var selectoption = document.getElementById("selectactuc1");
+        for (var i = 0; i < selectoption.options.length; i++) {
+          if (selectoption.options[i].value == "dfd") {
+            selectoption.options[i].remove();
+            break; // Exit the loop after removing the option
+          }
+        }*/
+        var listItemValue = $(btndel).closest("li").data("value");
+        //console.log(listItemValue);
         $(btndel).closest("li").remove();
-          
-          
-        var selectobject = document.getElementById("selectactuc21");
-        for (var i=0; i<selectobject.length; i++) {
-          if (selectobject.options[i].value == 'newOption_' + inpt1)
-              selectobject.remove(i);
-      }   
+        $("#selectactuc1").find('option[value="' + listItemValue + '"]').remove();
+        $("#selectactuc2").find('option[value="' + listItemValue + '"]').remove();
        
-       // x.remove(typeof(btndel));
        
     } else {
         return false;

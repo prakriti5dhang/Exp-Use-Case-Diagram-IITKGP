@@ -23,13 +23,14 @@ inpt21=document.getElementById("inp21").value;
   //rbtn.appendChild(newIconbtn);   
 
 newLi = document.createElement("li");
-newdiv = document.createElement("div");
-newdiv.setAttribute("class", "form-check");
-newLi.appendChild(newdiv);
+newLi.setAttribute("data-value", inpt21);
+//newdiv = document.createElement("div");
+//newdiv.setAttribute("class", "form-check");
+//newLi.appendChild(newdiv);
 
 let liTextNodeact = document.createTextNode(inpt21);
-newdiv.appendChild(liTextNodeact);
-newdiv.appendChild(newIconbtn);
+newLi.appendChild(liTextNodeact);
+newLi.appendChild(newIconbtn);
         // this just makes sure a user cant enter in a blank value
   
   if (inpt21 == "") {
@@ -101,13 +102,14 @@ var ucaseex2=[];
   newIconbtn.setAttribute("style","cursor:pointer;");
 
   newLi = document.createElement("li");
-  newdiv = document.createElement("div");
-  newdiv.setAttribute("class", "form-check");
-  newLi.appendChild(newdiv);
+  newLi.setAttribute("data-value", inpt22);
+  //newdiv = document.createElement("div");
+  //newdiv.setAttribute("class", "form-check");
+  //newLi.appendChild(newdiv);
   
   let liTextNodeuc = document.createTextNode(inpt22);
-  newdiv.appendChild(liTextNodeuc);
-  newdiv.appendChild(newIconbtn); 
+  newLi.appendChild(liTextNodeuc);
+  newLi.appendChild(newIconbtn); 
           // this just makes sure a user cant enter in a blank value
     
     if (inpt22 == "") {
@@ -860,8 +862,13 @@ alert(dobjrel2 +" is not possible between two use cases");
 
 function removerowact2(btndel) {
     if (typeof(btndel) == "object") {
+     
+        var listItemValue2 = $(btndel).closest("li").data("value");
+        //console.log(listItemValue);
         $(btndel).closest("li").remove();
-       // x.remove(typeof(btndel));
+        $("#selectactuc21").find('option[value="' + listItemValue2 + '"]').remove();
+        $("#selectactuc22").find('option[value="' + listItemValue2 + '"]').remove();
+       
        
     } else {
         return false;
@@ -869,11 +876,14 @@ function removerowact2(btndel) {
     
     
   }
-var x = document.getElementById("selectactuc1");
+
 function removerowuc2(btndel) {
   if (typeof(btndel) == "object") {
-      $(btndel).closest("li").remove();
-     // x.remove(typeof(btndel));
+    var listItemValue2 = $(btndel).closest("li").data("value");
+        //console.log(listItemValue);
+        $(btndel).closest("li").remove();
+        $("#selectactuc21").find('option[value="' + listItemValue2 + '"]').remove();
+        $("#selectactuc22").find('option[value="' + listItemValue2 + '"]').remove();
      
   } else {
       return false;
