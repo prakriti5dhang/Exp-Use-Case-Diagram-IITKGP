@@ -15,17 +15,17 @@ Follow are the steps to be followed in general to perform the experiments in **S
 #### **Experiment Specific Instructions**
 Following are the instructions specifically for this experiment:
 
-1. Identify an actor, and write its name in the left textbox of **‘Table #1’**. Click the adjacent **‘Add’** button to add this actor. Repeat this for all the possible actors.
-2. Identify a use case, and write its name in the left textbox of **‘Table #2’**. Click the adjacent **‘Add’** button to add this use case. Repeat this for all the possible use cases.
+1. Identify an actor, and write its name in the textbox of **‘Table #1’**. Click the adjacent **‘Add’** button to add this actor. Repeat this for all the possible actors.
+2. Identify a use case, and write its name in the textbox of **‘Table #2’**. Click the adjacent **‘Add’** button to add this use case. Repeat this for all the possible use cases.
 3. If you want to delete any actor or use case, go to the **‘Table #4’**, remove the actor or use case.
 4. **‘Table #3’** lets you define relationships between any two components. Select the first actor/use case from the first dropdown list, the second from the third drop down list. Select one relationship from the second dropdown list. If you want to put any label to the relation, write the text for the label to the adjacent textbox. Click on the **’Add’** button at the right side to add this relation. Repeat this for all the possible relations.
 5. Relationships so defined will be displayed in the **‘Table #5’**. Here, you have the option to remove a wrongly defined relationship.
-6. Click on the **‘Draw’** button to draw the Use Case diagram. You can click on this button at any time to reflect the changes that you have made to the actors, use cases, or relationships. The Use Case diagram will be displayed at the bottom of the page.
+6. Click on the **‘Draw’** button to draw the Use Case diagram. You can click on this button when all  the actors, use cases, or relationships are added. The Use Case diagram will be displayed at the bottom of the page.
 7. To view a sample solution for the exercise, click on the **'Submit'** button, and then on the **'View Solution'** button.
-8. Also, when your solution is not exactly right, you will get a **'View Solution'** button to view the solution.
+
 
 **NOTE** 
  
  1. Give the name of actors and use cases in **‘Table #1’** and **‘Table #2’** respectively by using alphabets, numerics and white-space only.
 2. Write the text of the label for relationships in **‘Table #3’** using alphabets, numerics and white-space only.
-3. After updating your inputs click **’Draw’** button to see your last updated diagram.
+3. After updating all the inputs click **’Draw’** button to see your last updated diagram.
