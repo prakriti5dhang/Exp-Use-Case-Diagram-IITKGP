@@ -227,8 +227,8 @@ function stopsimulation(){
 
 function replaysimulation(){
     location.reload();
-    document.getElementById("playbtn").style.display="block";
-    document.getElementById("pausebtn").style.display="none";
+    document.getElementById("playbtn").style.display="block"; //displays play button
+    document.getElementById("pausebtn").style.display="none"; // display none pause button
 }
 
 
