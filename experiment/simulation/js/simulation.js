@@ -4,9 +4,10 @@ Exp:Modeling UML Use Case Diagrams and Capturing Use Case Scenarios
 File Name: simulation.js
 Author: Prakriti Dhang */
 
+let highlightxt, highlightxta1;
 function playsimulation(){
-    document.getElementById("goend").disabled=true;
-    document.getElementById("gostrt").disabled=true;
+    //document.getElementById("goend").disabled=true;
+    //document.getElementById("gostrt").disabled=true;
    // const highlighttxt = document.getElementById('mu1');
    // highlighttxt.style.background= "linear-gradient(90deg,white 0%, rgba(255, 255, 255, 0) 50%)";
    // highlighttxt.style.webkitAnimationPlayState = "running";
@@ -18,16 +19,19 @@ function playsimulation(){
     document.getElementById("du11").style.display="none";
     document.getElementById("playbtn").style.display="none";
     document.getElementById("pausebtn").style.display="block";
-    const highlightxt = document.getElementById('m1');
+    highlightxt = document.getElementById('m1');
     highlightxt.style.webkitAnimationPlayState = "running";
 
     stopani = setTimeout(mactor1, 15000);
-
+   
 function mactor1(){
-    const highlightxta1 = document.getElementById('m11');
+    highlightxta1 = document.getElementById('m11');
     highlightxta1.style.webkitAnimationPlayState = "running";
+   // highlightxt.style.background=" linear-gradient(90deg, yellow 49%, rgba(255, 255, 255, 0) 50%)";
     stopani = setTimeout(mactor11, 3000);
 }
+
+
 function mactor11(){
     document.getElementById("pm1").style.display="block";
     document.getElementById("da11").style.display="block";
@@ -211,13 +215,22 @@ function stopsimulation(){
     document.getElementById("du31").style.display="none";
     const highlightxtu7 = document.getElementById('mu7');
     highlightxtu7.style.background=" linear-gradient(90deg, white 50%, rgba(255, 255, 255, 0) 50%)";
+    document.getElementById("playbtn").style.display="none";
+    document.getElementById("pausebtn").style.display="none";
+    document.getElementById("replaybtn").style.display="block";
+    //document.getElementById("goend").disabled=false;
+    //document.getElementById("gostrt").disabled=false;
+    clearTimeout(stopani);
+   // setTimeout(replayimulation, 3500);
+}
+}
+
+function replaysimulation(){
+    location.reload();
     document.getElementById("playbtn").style.display="block";
     document.getElementById("pausebtn").style.display="none";
-    document.getElementById("goend").disabled=false;
-    document.getElementById("gostrt").disabled=false;
-    clearTimeout(stopani);
 }
-}
+
 
 function pausesimulation(){
     const highlightxt = document.getElementById('m1');
